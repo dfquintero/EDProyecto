@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <link href="material.css" rel="stylesheet" id="bootstrap-css">
+    <style type="text/css">
+        /* Set the size of the div element that contains the map */
+        #map {
+          height: 400px;
+          /* The height is 400 pixels */
+          width: 600px;
+          /* The width is the width of the web page */
+        }
+      </style>
+    <script src="material2.js"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&key=AIzaSyAY3dAGgZ4wJaWqvscQ5013-9AjK3ElClY&callback=initMap"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAY3dAGgZ4wJaWqvscQ5013-9AjK3ElClY&callback=initMap&libraries=&v=weekly" defer></script>
+    <script type="text/javascript">
+    function initMap() {
+  // The location of Uluru
+  const uluru = { lat: 4.6396023, lng: -74.0898083 };
+  // The map, centered at Uluru
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 16,
+    center: uluru,
+  });
+  // The marker, positioned at Uluru
+  const marker = new google.maps.Marker({
+    position: uluru,
+    map: map,
+  });
+}
+
+        // The latitude and longitude of your business / place
+        var position = [4.6392023, -74.0844083];
+
+        function showGoogleMaps() {
+
+            var latLng = new google.maps.LatLng(position[0], position[1]);
+
+            var mapOptions = {
+                zoom: 16, // initialize zoom level - the max value is 21
+                streetViewControl: false, // hide the yellow Street View pegman
+                scaleControl: false, // allow users to zoom the Google Map
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                center: latLng
+            };
+
+            map = new google.maps.Map(document.getElementById('googlemaps'),
+                mapOptions);
+
+            // Show the default red marker at the location
+            marker = new google.maps.Marker({
+                position: latLng,
+                map: map,
+                draggable: false,
+                animation: google.maps.Animation.DROP
+            });
+        }
+
+        google.maps.event.addDomListener(window, 'load', showGoogleMaps);
+    </script>
+    <script>
+        $(function () {
+
+            $('#login-form-link').click(function (e) {
+                $("#login-form").delay(100).fadeIn(100);
+                $("#register-form").fadeOut(100);
+                $('#register-form-link').removeClass('active');
+                $(this).addClass('active');
+                e.preventDefault();
+            });
+            $('#register-form-link').click(function (e) {
+                $("#register-form").delay(100).fadeIn(100);
+                $("#login-form").fadeOut(100);
+                $('#login-form-link').removeClass('active');
+                $(this).addClass('active');
+                e.preventDefault();
+            });
+
+        });
+    </script>
+    <style>
+        .mySlides {
+            display: none;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <header style="align-content: center; background-color: #00aa88ff;">
+        <center>
+            <img src="img/path1088-4-72.png" style="height: 60px; margin: 10px;" />
+        </center>
+    </header>
+    <h2>Habitación</h2>
+    <table>
+        <tr>
+            <th style="width: 600px;">
+                <img class="mySlides" src="img/slider/1.jpg" style="max-width: 100%;">
+                <img class="mySlides" src="img/slider/2.jpg" style="max-width: 100%;">
+                <img class="mySlides" src="img/slider/3.jpg" style="max-width: 100%;">
+                
+                </div>
+                <button class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+                <button class="w3-button w3-display-right" onclick="plusDivs(+1)">&#10095;</button>
+            </th style="width:600px">
+            <th>
+                <div id="map"></div>
+            </th>
+        </tr>
+    </table>
+    <div>
+
+        <h4><b>Distancia a la UN: </b>8 Minutos Aprox.</h4>
+        <h4><b>Baño Privado: </b>NO</h4>
+        <h4><b>Servicios incluidos: </b>SI</h4>
+        <h4><b>Precio: </b>$000.000 / mensual</h4>
+        <script>
+            var slideIndex = 1;
+            showDivs(slideIndex);
+
+            function plusDivs(n) {
+                showDivs(slideIndex += n);
+            }
+
+            function showDivs(n) {
+                var i;
+                var x = document.getElementsByClassName("mySlides");
+                if (n > x.length) { slideIndex = 1 }
+                if (n < 1) { slideIndex = x.length }
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
+                }
+                x[slideIndex - 1].style.display = "block";
+            }
+        </script>
+
+
+</body>
+
+</html>
