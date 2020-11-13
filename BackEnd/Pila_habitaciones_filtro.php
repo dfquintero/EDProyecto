@@ -45,7 +45,7 @@ class Stack
 $pila = new Stack();
 
 
-$consulta = "SELECT ID_HABITACION, AMOBLADO ,PRECIO FROM HABITACION";
+$consulta = "SELECT ID_HABITACION, AMOBLADO ,PRECIO FROM HABITACION WHERE ID_HABITACION NOT IN (SELECT ID_HABITACION FROM OCUPA WHERE FECHA_FIN IS NULL)";
 if ($resultado = mysqli_query($conn, $consulta)) {
     while ($fila = mysqli_fetch_array($resultado)) {
         if ($fila['AMOBLADO'] != 'No'){

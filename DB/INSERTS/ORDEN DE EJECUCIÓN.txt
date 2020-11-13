@@ -1,0 +1,8 @@
+perfil(1)
+arrendador(1)
+estudiante
+vivienda(2)
+habitacion
+habitacion(1)
+ocupa
+visita(1)

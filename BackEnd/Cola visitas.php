@@ -56,7 +56,7 @@ class Node {
 $visitsQueue = new Queue();
 
 
-$consulta = "SELECT ID_VISITAS, ID_HABITACION, ID_USUARIO, FECHA FROM VISITAS WHERE ID_HABITACION = 510 ORDER BY FECHA ASC;";
+$consulta = "SELECT ID_VISITA, ID_HABITACION, ID_ESTUDIANTE, FECHA FROM VISITA WHERE ID_HABITACION = 932 ORDER BY FECHA ASC;";
 
 if ($resultado = mysqli_query($conn, $consulta)) {
 
@@ -71,7 +71,7 @@ mysqli_close($conn);
 echo "<h1> Visitas de la habitación 510 </h1><br>";
 while ($visitsQueue->head != null) {
     $arr =  $visitsQueue->dequeue();
-    echo "<b>Visita #</b>".$arr['ID_VISITAS']." "." <b>Habitación: </b>".$arr['ID_HABITACION']." <b>ID de usuario: </b>".$arr['ID_USUARIO']."<b> Fecha: </b>".$arr['FECHA']."<br><br>";
+    echo "<b>Visita #</b>".$arr['ID_VISITA']." "." <b>Habitación: </b>".$arr['ID_HABITACION']." <b>ID de Estudiante: </b>".$arr['ID_ESTUDIANTE']."<b> Fecha: </b>".$arr['FECHA']."<br><br>";
 }
 /*
 $tiempo_inicial = microtime(true);

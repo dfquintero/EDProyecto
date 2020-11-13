@@ -42,11 +42,11 @@ class DoublyLinkedList {
         $current = $this->head ;
         while($current->next != null){
             //echo $current->data[0]." ".$current->data[1]; 
-            echo "<b>Habitación # </b>".$current->data['ID_HABITACION']."<b> Amoblado: </b>".$current->data['AMOBLADO']."<b> Precio: </b>".$current->data['PRECIO']."<b> VIP: </b>".$current->data['VIP']."<br><br>";
+            echo "<b>Habitación # </b>".$current->data['ID_HABITACION']."<b> Amoblado: </b>".$current->data['AMOBLADO']."<b> Precio: </b>".$current->data['PRECIO']."<br><br>";
             $current = $current->next;
         }
         //echo $current->data[0]." ".$current->data[1]; 
-        echo "<b>Habitación # </b>".$current->data['ID_HABITACION']."<b> Amoblado: </b>".$current->data['AMOBLADO']."<b> Precio: </b>".$current->data['PRECIO']."<b> VIP: </b>".$current->data['VIP']."<br><br>";
+        echo "<b>Habitación # </b>".$current->data['ID_HABITACION']."<b> Amoblado: </b>".$current->data['AMOBLADO']."<b> Precio: </b>".$current->data['PRECIO']."<br><br>";
     }
 }
 
@@ -91,8 +91,8 @@ $NPlist = new DoublyLinkedList();
 
 $tiempo_inicial = microtime(true);
 
-$consulta = "SELECT ID_HABITACION, AMOBLADO ,PRECIO, VIP FROM HABITACION WHERE VIP = 0";
-$consulta2 = "SELECT ID_HABITACION, AMOBLADO ,PRECIO, VIP FROM HABITACION WHERE VIP = 1";
+$consulta = "SELECT ID_HABITACION, AMOBLADO ,PRECIO FROM HABITACION WHERE ID_CASA IN (SELECT ID_CASA FROM VIVIENDA WHERE ID_ARRENDADOR IN (SELECT ID_ARRENDADOR FROM ARRENDADOR WHERE VIP = 0)) ";
+$consulta2 = "SELECT ID_HABITACION, AMOBLADO ,PRECIO FROM HABITACION WHERE ID_CASA IN (SELECT ID_CASA FROM VIVIENDA WHERE ID_ARRENDADOR IN (SELECT ID_ARRENDADOR FROM ARRENDADOR WHERE VIP = 1)) ";
 
 
 
@@ -118,7 +118,7 @@ if ($resultado = mysqli_query($conn, $consulta2)) {
 echo "<b><h2>Habitaciones: </h2></b><br>";
 concatenateLists($VIPlist, $NPlist);
 
-for ($i = 0; $i <=100000000; $i++){
+/*for ($i = 0; $i <=100000000; $i++){
     $vivienda = rand( 1 , 1000);
     $area = rand(10, 500);
     $precio =  rand(100000, 5000000);
@@ -137,5 +137,5 @@ $VIPlist->push(array());
 $tiempo_final = microtime(true);
 $tiempo_total = $tiempo_final - $tiempo_inicial;
 echo $tiempo_total;
-
+*/
  ?>
