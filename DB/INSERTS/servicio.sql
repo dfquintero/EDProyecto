@@ -1,0 +1,3 @@
+INSERT INTO SERVICIO VALUES (1, 1, 1, 'Calentador de agua');
+INSERT INTO SERVICIO VALUES (2, 0, 1, 'Win Sports +');
+INSERT INTO SERVICIO VALUES (3, 0, 0, 'Almuerzo');

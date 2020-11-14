@@ -6,3 +6,6 @@ habitacion
 habitacion(1)
 ocupa
 visita(1)
+servicio
+tiene_servicio(1)
+tiene_servicio
