@@ -29,7 +29,7 @@ class Node{
     public function insert($data){
         if ($this->data != null)
         {
-            if ($data['PRECIO'] < $this->precio)
+            if ($data['PRECIO'] <= $this->precio)
             {
                 if ($this->left === null) 
                 {
@@ -42,7 +42,7 @@ class Node{
                 }
             }
             
-            elseif ($data['PRECIO'] > $this->precio)
+            elseif ($data['PRECIO'] >= $this->precio)
             {
                 if ($this->right === null)
                 {
