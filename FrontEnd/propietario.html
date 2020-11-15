@@ -13,107 +13,103 @@
 
 <body>
   <!--navbar-->
-  <nav class="navbar navbar-fixed-bottom navbar-expand-lg navbar-dark bg-dark navbar-static-top">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <img class="navbar-brand" src="img/path1088-4-72.png" style="height: 50px; margin: -10px;" />
+      <a class="navbar-brand" href="#">
+        <img src="img/path1088-4-72.png" alt="Logo" style="height: 50px;">
+      </a>
       <!--collapse btn-->
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02"
         aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarColor02">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#inicio">Inicio<span class="sr-only">(current)</span></a>
-          </li>
+        
+        <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#estudiantes">Estudiante</a>
+            <h6 class="nav-link" style="color: white;" href="#inicio">username</h6>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#propietarios">Propietario</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#acercade">Acerca de</a>
+          <li class="nav-item" style="align-self: left;">
+            <a class="btn btn-danger" href="index.html">Cerrar Sesión</a>
           </li>
         </ul>
       </div>
 
     </div>
   </nav>
-  <div class="container">
-    <ul class="nav nav-tabs">
-      <li class="nav-item">
-        <a class="nav-link active" data-toggle="tab" href="#perfil">Perfil</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#habitaciones">Habitaciones</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#visitas">Visitas</a>
-      </li>
-    </ul>
-    <div id="myTabContent" class="tab-content">
-      <div class="tab-pane fade show active" id="perfil">
-        <div class="container">
-          <form>
-            <fieldset>
-              <div class="form-group row">
-                <div class="col-sm-2">
-                  <img class="navbar-brand" src="img/icons/userblank.png" style=" margin: 10px;" />
-                </div>
-                <div class="col-sm-10">
-                  <h3>Nombre Arrendador</h3>
-                  <div class="form-group row">
-                    <img class="navbar-brand" class="col-sm-2 col-form" src="img/icons/userblank.png" style="height: 40px; margin: 0px;" />
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control-plaintext" id="ProEmail" value="arrendatario@correo.com">
-                    </div>
-                  </div>
-                </div>
+  <!--content-->
+  <div class="container" style="margin-top:80px">
+    <hr />
+    <div class="row">
+      <!--perfil-->
+      <div class="col-sm-4 ">
+        <img src="img/icons/userblank.png" style="width: 100px; height: 100px; margin: 20px;"/>
+        <P>Nombre usuario</P>
+      </div>
+      <!--tabs-->
+      <div class="col-sm-8">
+        <ul class="nav nav-pills nav-justified">
+          <li class="nav-item">
+            <a class="nav-link active" data-toggle="pill" href="#home">Agenda de Visitas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="pill" href="#menu1">Habitaciones</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="pill" href="#menu2">Nueva Habitación</a>
+          </li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane container active" id="home">
+            <div class="card mb-3">
+              <h3 class="card-header">Card header</h3>
+              <div class="card-body">
+                <h5 class="card-title">Special title treatment</h5>
+                <h6 class="card-subtitle text-muted">Support card subtitle</h6>
               </div>
-              <h4>Actualizar Datos</h4>
-              <div class="form-group">
-                <label for="exampleInputEmail1">Nombre:</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="nombre">
+              <svg xmlns="http://www.w3.org/2000/svg" class="d-block user-select-none" width="100%" height="200" aria-label="Placeholder: Image cap" focusable="false" role="img" preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180" style="font-size:1.125rem;text-anchor:middle">
+                <rect width="100%" height="100%" fill="#868e96"></rect>
+                <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
+              </svg>
+              <div class="card-body">
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
               </div>
-              <div class="form-group">
-                <label for="inputemail">Correo Electrónico:</label>
-                <input type="email" class="form-control" id="inputemail" placeholder="email">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Cras justo odio</li>
+                <li class="list-group-item">Dapibus ac facilisis in</li>
+                <li class="list-group-item">Vestibulum at eros</li>
+              </ul>
+              <div class="card-body">
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
               </div>
-              <div class="form-group">
-                <label for="inputnum">Número de Contacto:</label>
-                <input type="email" class="form-control" id="inputnum" placeholder="teléfono">
+              <div class="card-footer text-muted">
+                2 days ago
               </div>
-              <div class="form-group">
-                <label for="inputpass">Contraseña: </label>
-                <input type="password" class="form-control" id="inputpass" placeholder="contraseña">
+            </div>
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">Card title</h4>
+                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
               </div>
-              <button type="submit" class="btn btn-primary">Actualizar</button>
-            </fieldset>
-          </form>
+            </div>
+          </div>
+          <div class="tab-pane container fade" id="menu1">2</div>
+          <div class="tab-pane container fade" id="menu2">3</div>
         </div>
       </div>
-      <div class="tab-pane fade" id="habitaciones">
-        <div class="container">
-          <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1
-            labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer
-            twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl
-            cillum
-            PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit.</p>
-        </div>
-      </div>
-      <div class="tab-pane fade" id="visitas">
-        <div class="container">
-          <h2>Visitas</h2>
-          <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny
-            pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard
-            locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid
-            8-bit
-            cred pitchfork.</p>
-        </div>
-      </div>
-    </div>
+    </div> 
+    <hr />   
+    <hr />   
   </div>
+  <!--footer-->
+  <hr/>
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-bottom" style="background-color:#202020; color: #707070;">
+    VUNMe - Todos los derechos reservados
+  </nav>
   <!-- jQuery, Popper.js, and Bootstrap JS-->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
