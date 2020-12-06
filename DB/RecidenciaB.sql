@@ -21,6 +21,8 @@ drop table if exists VISITA;
 
 drop table if exists VIVIENDA;
 
+drop table if exists OCUPA;
+
 /*==============================================================*/
 /* Table: ARRENDADOR                                            */
 /*==============================================================*/
