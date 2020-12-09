@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="ES-CO">
 
 <head>
@@ -35,15 +35,15 @@
         <div class="tab-content" id="RegTabsContent">
           <!--login-->
           <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-            <form >
+            <form action="validar.php" method="post">
               <div class="form-group">
                 <label for="exampleInputEmail1">Correo Electrónico</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="usuario">
                 <small id="emailHelp" class="form-text text-muted">Nunca compartimos tus datos nadie más.</small>
               </div>
               <div class="form-group">
                 <label for="exampleInputPassword1">Contraseña</label>
-                <input type="password" class="form-control" id="exampleInputPassword1">
+                <input type="password" class="form-control" id="exampleInputPassword1" name="clave">
               </div>
               <div class="form-group form-check">
               </div>

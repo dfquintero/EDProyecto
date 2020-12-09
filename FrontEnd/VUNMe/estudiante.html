@@ -1,3 +1,13 @@
+<?php
+    session_start();
+    $varsesion = $_SESSION['usuario']
+    error_reporting(0);
+    if($varsesion==null || $varsesion = ''){
+        echo 'usted no tiene autorización';
+        die();
+    }
+?>
+
 <!doctype html>
 <html lang="ES-CO">
 
@@ -32,7 +42,7 @@
 						<h6 class="nav-link" style="color: white;" href="#inicio">username </h6>
 					</li>
 					<li class="nav-item" style="align-self: left;">
-						<a class="btn btn-danger" href="index.html">Cerrar Sesión</a>
+						<a class="btn btn-danger" href="cerrar.php">Cerrar Sesión</a>
 					</li>
 				</ul>
 			</div>
