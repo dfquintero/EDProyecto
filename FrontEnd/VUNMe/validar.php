@@ -14,10 +14,10 @@
         $identificador="SELECT ID_USUARIO FROM perfil WHERE email='$usuario'";
         $valor="SELECT ID_USUARIO FROM estudiante WHERE ID_USUARIO='$identificador'";
         if ($valor=$identificador){
-            header("location:estudiante.html")
+            header("location:estudiante.html");
         }
         else{
-            header("location:propietario.html")
+            header("location:propietario.html");
         }
     }
     else{
