@@ -2,9 +2,9 @@
 /* DBMS name:      MySQL 5.0                                    */
 /* Created on:     8/11/2020 5:57:06 p. m.                      */
 /*==============================================================*/
-drop database prueba;
-create database prueba;
-use prueba;
+drop database VUNMe;
+create database VUNMe;
+use VUNMe;
 drop table if exists ARRENDADOR;
 
 drop table if exists ESTUDIANTE;
