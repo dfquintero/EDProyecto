@@ -1,5 +1,20 @@
 <?php 
+<<<<<<< Updated upstream:BackEnd/Filtro_Prioridad_precio.php
 include('cn.php');
+=======
+$servername = "localhost";
+$database = "prueba";
+$username = "admin";
+$password = "";
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $database);
+// Check connection
+if (!$conn) {
+    die("Connection failed{
+         <br>" . mysqli_connect_error());
+}
+echo "Connected successfully <br>";
+>>>>>>> Stashed changes:BackEnd/BSTHEAPHabitaciones.php
 
 class Node{
         public $parent;
