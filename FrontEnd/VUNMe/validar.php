@@ -4,7 +4,7 @@
     $clave=$_POST['clave'];
     $_SESSION['usuario'] = $usuario;
     //conectar a la base
-    $conexion=mysqli_connect("localhost","root","","RecidenciaB");
+    $conexion=mysqli_connect("localhost","root","","vunme");
     $consulta="SELECT * FROM perfil WHERE nombre='$usuario' and contrasena='$clave'";
     $resultado=mysqli_query($conexion, $consulta);
 
