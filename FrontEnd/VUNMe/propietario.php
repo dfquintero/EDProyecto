@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="ES-CO">
+<?php include('Filtro_búsqueda_habitaciones_propietario.php'); ?>
 
 <head>
 	<!-- Required meta tags -->
@@ -143,7 +144,7 @@
 							<a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
 								<div class="d-flex w-100 justify-content-between">
 									<h5 class="mb-1"> Habitación: <?php echo $valor['ID_HABITACION']; ?></h5>
-									<small>2020/12/3</small>
+									<small><?php echo $valor['FECHA'];?></small>
 								</div>
 								<p class="mb-1"><b>Estudiante: </b><?php echo $valor['ID_ESTUDIANTE']; ?></p>
                             </a>
@@ -174,10 +175,12 @@
 							<button type="submit" class="btn btn-info btn-block">Buscar</button>
 						</form>
                         <hr />
-                        
+
+                        <?php foreach($arrR as &$value){
+                                $arrF = $arrayI[$value]; ?>
 						<div class="card mb-3 border-dark">
 							<div class="card-header navbar-dark border-dark h5 color-red">
-								Room 404
+								Habitación  <?php echo $arrF['ID_HABITACION'];?>
 								<span class="badge badge-success border- float-right">Disponible</span>
 							</div>
 							<div class="row no-gutters">
@@ -187,9 +190,8 @@
 								</div>
 								<div class="col-md-8">
 									<div class="card-body">
-										<p class="card-text">Habitación amoblada con todos los servicios incluidos</p>
-										<p><i class="fas fa-map-marker-alt"></i> : Calle 00 # 00 - 00 </p>
-										<p><i class="fas fa-dollar-sign"></i> : $700.000</p>
+										<p class="card-text"><?php echo $arrF['AMOBLADO'];?></p>
+										<p><i class="fas fa-dollar-sign"></i> : <?php echo $arrF['PRECIO'];?></p>
 									</div>
 									<b>Servicios: </b>
 
@@ -216,7 +218,8 @@
 								</form>
 
 							</div>
-						</div>
+                        </div>
+                        <?php }?>
 						</br></br>
 
 						</br></br>

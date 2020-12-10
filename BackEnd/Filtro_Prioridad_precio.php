@@ -1,20 +1,5 @@
 <?php 
-<<<<<<< Updated upstream:BackEnd/Filtro_Prioridad_precio.php
 include('cn.php');
-=======
-$servername = "localhost";
-$database = "prueba";
-$username = "admin";
-$password = "";
-// Create connection
-$conn = mysqli_connect($servername, $username, $password, $database);
-// Check connection
-if (!$conn) {
-    die("Connection failed{
-         <br>" . mysqli_connect_error());
-}
-echo "Connected successfully <br>";
->>>>>>> Stashed changes:BackEnd/BSTHEAPHabitaciones.php
 
 class Node{
         public $parent;
@@ -148,21 +133,7 @@ class Node{
         }
     }
     
-/*
-    public function PrintTree()
-    {
-        $table = $this->data;
-        if ($this->left != null)
-        {
-            $this->left->PrintTree();
-        }
-        echo '<b></b>'.$this->precio.'<br>';
-        if ($this->right)
-        {
-            $this->right->PrintTree();
-        }
-    }
-    */
+
 }
 
 
@@ -247,11 +218,11 @@ class Heap
     }
     public function printHeap()
     {
+        global $arr;
         while (!$this->isEmpty()) {
             
             $current = $this->extract();
-            echo "<b>Prioridad # </b>".$current['PRIORIDAD']." <b>Habitación # </b>".$current['ID_HABITACION']."<b> Amoblado: </b>".$current['AMOBLADO']."<b> Precio: </b>".$current['PRECIO']."<br><br>";
-        
+            $arr[] = $current;
         }
     }
 
@@ -332,7 +303,7 @@ class BSTtoHeap {
     }
 }
 
-
+$arr = array();
 $consulta = "SELECT ID_HABITACION, AMOBLADO ,PRECIO FROM HABITACION WHERE ID_HABITACION NOT IN (SELECT ID_HABITACION FROM OCUPA WHERE FECHA_FIN IS NULL)";
 
 if ($resultado = mysqli_query($conn, $consulta)) {
@@ -344,6 +315,7 @@ if ($resultado = mysqli_query($conn, $consulta)) {
 }
 $heapbst = new BSTtoHeap(200000, 1000000, $visitsTree);
 $heapbst->printAll();
+
 
 //$visitsTree->PrintTree();
 
