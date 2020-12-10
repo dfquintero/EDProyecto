@@ -128,7 +128,7 @@ foreach($arrayI as &$val){
     } 
 }
 
-$arrR = $hashTable->search('Duis');
+$arrR = $hashTable->search('Duis'); 
 
 
 ?> 

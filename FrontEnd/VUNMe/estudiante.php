@@ -1,8 +1,16 @@
-
+<?php
+    session_start();
+	$varsesion = $_SESSION['usuario'];
+	$a = $varsesion;
+    error_reporting(0);
+    if($varsesion==null || $varsesion = ''){
+        echo 'usted no tiene autorización';
+        die();
+    }
+?>
 
 <!doctype html>
 <html lang="ES-CO">
-
 <head>
 	<!-- Required meta tags -->
 	<meta charset="utf-8">
@@ -31,7 +39,7 @@
 
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item">
-						<h6 class="nav-link" style="color: white;" href="#inicio">username </h6>
+						<h6 class="nav-link" style="color: white;" href="#inicio"> <?php echo $a ?></h6>
 					</li>
 					<li class="nav-item" style="align-self: left;">
 						<a class="btn btn-danger" href="cerrar.php">Cerrar Sesión</a>
@@ -51,12 +59,12 @@
 					<img src="img/moreicons/userblank.png" style="width: 100px; height: 100px; margin: 20px;" />
 				</center>
 				<hr />
-				<legend>username</legend>
+				<legend>Usuario</legend>
 				<div class="form-group row">
 					<label for="lblproemail" class="col-lg-3 col-form-label">Email: </label>
 					<div class="col-lg-9">
 						<input type="text" readonly="" class="form-control-plaintext" id="lblpromail"
-							value="email@unal.edu.co">
+							value="<?php echo $a;?>">
 					</div>
 				</div>
 				<div class="form-group row">
@@ -177,7 +185,6 @@
 						<div class="col-md-8">
 							<div class="card-body">
 								<p class="card-text"><?php echo $current['AMOBLADO']; ?></p>
-								<p><i class="fas fa-map-marker-alt"></i> POR DEFINIR</p>
 								<p><i class="fas fa-dollar-sign"></i> : <?php echo $current['PRECIO']; ?></p>
 							</div>
 						</div>
@@ -205,7 +212,7 @@
 										</button>
 									</div>
 									<div class="modal-body">
-										Felicidades su cita fue asignada para <b id="fechaasg">una fecha especifica</b>, el
+										Felicidades su cita fue asignada para <b id="fechaasg">11/12/2020</b>, el
 										propietario se comunicará contigo para confirmar la hora y pueda conocer el
 										lugar personalmente.
 									</div>

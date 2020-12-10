@@ -5,14 +5,8 @@ include ("cn.php");
     $clave=$_POST['clave'];
     $_SESSION['usuario'] = $usuario;
     //conectar a la base
-<<<<<<< HEAD
     $consulta="SELECT * FROM perfil WHERE email='$usuario' and contrasena='$clave'";
     $resultado=mysqli_query($conn, $consulta);
-=======
-    $conexion=mysqli_connect("localhost","root","","vunme");
-    $consulta="SELECT * FROM perfil WHERE nombre='$usuario' and contrasena='$clave'";
-    $resultado=mysqli_query($conexion, $consulta);
->>>>>>> 0b172396a74d23c88dbaf9130a502992aa125909
 
     $identificador="SELECT ID_USUARIO FROM estudiante WHERE ID_USUARIO=(SELECT ID_USUARIO FROM perfil WHERE email='$usuario')";
     $compara1=mysqli_query($conn, $identificador);
@@ -23,10 +17,10 @@ include ("cn.php");
         //inicia sesion
         $filas=mysqli_num_rows($compara1);
         if ($filas>0){
-            header("location:estudiante.html");
+            header("location:estudiante.php");
         }
         else{
-            header("location:propietario.html");
+            header("location:propietario.php");
         }
     }
     else{
